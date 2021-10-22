@@ -60,7 +60,6 @@ public class ClienteRestController {
 	}
 
 	@PostMapping("/clientes")
-	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<?> create(@Valid @RequestBody Cliente cliente, BindingResult result) {
 		Cliente clienteNew= null;
 		Map<String, Object> response = new HashMap<>();
@@ -94,7 +93,6 @@ public class ClienteRestController {
 	}
 
 	@PutMapping("/clientes/{id}")
-	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<?> update(@Valid  @RequestBody Cliente cliente,BindingResult result,@PathVariable Long id) {
 		
 		Cliente clienteActual = clienteService.findById(id);
